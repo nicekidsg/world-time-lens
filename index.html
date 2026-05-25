@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>World Time Lens</title>
+    <meta
+      name="description"
+      content="输入任意地区时间，实时换算世界主要城市时区。"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="time-lens" aria-labelledby="page-title">
+        <header class="hero">
+          <div>
+            <p class="eyebrow">WORLD TIME LENS</p>
+            <h1 id="page-title">输入一地时间，看见全球此刻</h1>
+          </div>
+          <div class="hero-actions">
+            <label class="language-switch">
+              <span id="languageLabel">语言</span>
+              <select id="languageSelect" aria-labelledby="languageLabel">
+                <option value="en">English</option>
+                <option value="zh">中文</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+                <option value="ar">العربية</option>
+                <option value="pt">Português</option>
+                <option value="de">Deutsch</option>
+                <option value="ja">日本語</option>
+              </select>
+            </label>
+            <button class="ghost-button" id="nowBtn" type="button">现在</button>
+          </div>
+        </header>
+
+        <section class="control-panel" id="controlPanel" aria-label="时间输入">
+          <label class="field">
+            <span id="zoneLabel">地区</span>
+            <select id="sourceZone"></select>
+          </label>
+          <label class="field">
+            <span id="timeLabel">当地时间</span>
+            <input id="sourceTime" type="datetime-local" />
+          </label>
+          <div class="source-readout">
+            <span id="sourceOffset">UTC+08:00</span>
+            <strong id="sourceTitle">上海</strong>
+            <small id="sourceDate">2026年05月25日</small>
+          </div>
+        </section>
+
+        <section class="globe-panel" id="globePanel" aria-label="全球时间带">
+          <div class="orbit" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="timeline" id="timeline"></div>
+        </section>
+
+        <section class="city-grid" id="cityGrid" aria-label="世界城市时间"></section>
+      </section>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
